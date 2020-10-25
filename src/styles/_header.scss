@@ -1,0 +1,24 @@
+header {
+  .navbar-brand {
+    width: 25%;
+    height: 130px;
+    /* instead of object fit for ie */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .navbar-form {
+    width: 40%;
+    input {
+      &.form-control {
+        width: 100%;
+        height: 50px;
+        box-shadow: 1px 1px 1px #ddd;
+      }
+    }
+  }
+}
