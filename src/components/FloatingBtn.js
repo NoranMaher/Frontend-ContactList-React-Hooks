@@ -4,8 +4,8 @@ import { GrAdd } from "react-icons/gr";
 
 const FloatingBtn = () => {
   return (
-    <Link to="/add">
-      <GrAdd />
+    <Link className="floatingBtn" to="/add">
+      <GrAdd className="addIcon" />
     </Link>
   );
 };

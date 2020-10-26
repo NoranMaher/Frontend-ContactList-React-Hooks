@@ -1,0 +1,30 @@
+.profileList {
+  margin: 3rem auto;
+  max-width: 40%;
+  min-width: 400px;
+  li {
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    padding: 0.5rem;
+    &.redText {
+      color: $primary;
+    }
+    span {
+      &:first-of-type {
+        width: 100px;
+        color: $secondryLight;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button,
+  a {
+    margin: 0 0.5rem;
+  }
+}

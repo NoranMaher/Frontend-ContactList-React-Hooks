@@ -5,6 +5,15 @@ export default (state, action) => {
         ...state,
         contacts: action.payload,
       };
+    case "SEARCH_CONTACTS":
+      return {
+        ...state,
+        contacts: state.contacts.filter((contact) => {
+          return contact.fullName
+            .toLowerCase()
+            .includes(action.payload.toLowerCase());
+        }),
+      };
     case "REMOVE_CONTACT":
       return {
         ...state,

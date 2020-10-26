@@ -24,7 +24,12 @@ export const GlobalProvider = ({ children }) => {
       payload: contacts,
     });
   };
-
+  const searchContacts = (search) => {
+    dispatch({
+      type: "SEARCH_CONTACTS",
+      payload: search,
+    });
+  };
   const removeContact = (id) => {
     dispatch({
       type: "REMOVE_CONTACT",
@@ -57,15 +62,13 @@ export const GlobalProvider = ({ children }) => {
       .catch((error) => console.log(error));
   }, []);
 
-  useEffect(() => {
-    console.log(state.contacts);
-  }, [state]);
   return (
     <GlobalContext.Provider
       value={{
         contacts: state.contacts,
         search,
         setSearch,
+        searchContacts,
         removeContact,
         addContact,
         editContact,

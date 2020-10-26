@@ -29,27 +29,29 @@ const ContactDetails = (props) => {
   }, [currentContactId, contacts]);
   return (
     <>
-      <Title content="Profile" />
-      <ListGroup>
+      <Title content={`${selectedContact.fullName}'s Profile`} />
+      <ListGroup className="profileList">
         <ListGroupItem>
           <span>Name:</span>
           <span>{selectedContact.fullName}</span>
         </ListGroupItem>
-        <ListGroupItem>
+        <ListGroupItem className="redText">
           <span>E-mail:</span>
           <span>{selectedContact.emailAddress}</span>
         </ListGroupItem>
-        <ListGroupItem>
+        <ListGroupItem className="redText">
           <span>Phone:</span>
           <span>{selectedContact.phoneNumber}</span>
         </ListGroupItem>
       </ListGroup>
-      <div>
-        <Button outline onClick={handleRemoveContact} color="danger">
+      <div className="btnGroup">
+        <Button className="redBtn" onClick={handleRemoveContact}>
           Delete
         </Button>
 
-        <Link to={`/edit/${currentContactId}`}>Edit</Link>
+        <Link className="greyBtn" to={`/edit/${currentContactId}`}>
+          Edit
+        </Link>
       </div>
     </>
   );
